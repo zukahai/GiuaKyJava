@@ -51,12 +51,12 @@ public class Main {
                     switch (choice2) {
                         case 1:
                             f = new FruitIn();
-                            f.input();
+                            f.input(F);
                             F.add(f);
                             break;
                         case 2:
                             f = new FruitOut();
-                            f.input();
+                            f.input(F);
                             F.add(f);
                             break;
                         default:

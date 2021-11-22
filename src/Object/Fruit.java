@@ -25,15 +25,28 @@ public class Fruit implements IFruit{
         return "[ID=" + this.id + ", name=" + this.name + " Price=" + this.price + "]";
     }
 
-    public void input() {
+    public void input(FruitList F) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap ID: ");
-        this.id = sc.nextInt();
+        boolean check = true;
+        do {
+            System.out.print("Nhap ID: ");
+            this.id = sc.nextInt();
+            check = checkID(this.id, F);
+            if (check == false)
+                System.out.println("ID da ton tai, vui long nhap ID khac");
+        } while (check == false);
         sc.nextLine();
         System.out.print("Nhap Name: ");
         this.name = sc.nextLine();
         System.out.print("Nhap Price: ");
         this.price = sc.nextDouble();
+    }
+
+    public boolean checkID(int id, FruitList F) {
+        for (int i = 0; i < F.FList.size(); i++)
+            if (F.FList.get(i).getId() == id)
+                return false;
+        return true;
     }
 
     public void setPrice(double price) {
@@ -65,5 +78,4 @@ public class Fruit implements IFruit{
         // TODO Auto-generated method stub
         return 0;
     }
-    
 }

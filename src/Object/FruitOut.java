@@ -26,9 +26,9 @@ public class FruitOut extends Fruit{
         return this.price + this.extraOut + 0.1 * this.extraOut;
     }
 
-    public void input() {
+    public void input(FruitList F) {
         Scanner sc = new Scanner(System.in);
-        super.input();
+        super.input(F);
         System.out.print("Nhap Orgin: ");
         this.orgin = sc.nextLine();
         System.out.print("Nhap ExtraOut: ");

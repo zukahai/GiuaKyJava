@@ -23,9 +23,9 @@ public class FruitIn extends Fruit {
         return this.price + this.extraIn;
     }
 
-    public void input() {
+    public void input(FruitList F) {
         Scanner sc = new Scanner(System.in);
-        super.input();
+        super.input(F);
         System.out.print("Nhap ExtraIn: ");
         this.extraIn = sc.nextDouble();
     }
